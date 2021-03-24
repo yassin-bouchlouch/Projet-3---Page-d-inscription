@@ -14,11 +14,14 @@ function om() {
                     var text=document.getElementById("Email").value;
                     document.getElementById ("p").innerHTML+="<b>Email:</b>&nbsp;"+text+"<br>";
                 
-                                 
+                    document.getElementById("result1").innerHTML = "<br><a id='but' href='javascript:window.print()' style='width: 80%; border-radius: 20px; padding: 10px ; background-color: grey;font-size: 20px;font-weight: bold;margin-top: 10px; text-color:black;cursor: pointer;' >imprimer</a> <br>  ";
+                    
+                    
     
     
     
                 }
+                
     
             
     
