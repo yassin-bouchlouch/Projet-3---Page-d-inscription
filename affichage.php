@@ -82,7 +82,7 @@ $_SESSION['numero'] =  $numero;
 <h1>Liste des participants</h1>
 
 
-<table class="table table-striped" >
+<table class="table" >
         <thead>
             <tr>
                 <th>nom</th>

@@ -26,18 +26,14 @@
 			<input type="text" placeholder="Prénom" name="prenom"/>
 			<input type="text" placeholder="Nom" name="nom" />
 			<input type="email" placeholder="Email" name="email" />
-			<input type="number" placeholder="Tel" name="numero" />
+			<input type="text" placeholder="Tel" name="numero" />
 			<button class="btn1" >Submit</button>
 		</form>
 	</div>
 	
 	<div class="overlay-container">
 		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
+		
 			<div class="overlay-panel overlay-right">
 				<h1>Bonjour</h1>
 				<p>Entrez vos informations personnelles et commencez votre voyage avec nous pour recevoir votre certificat.</p>
