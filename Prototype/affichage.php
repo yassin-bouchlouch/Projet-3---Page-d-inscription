@@ -59,15 +59,15 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
 <link rel='stylesheet' type='text/css' href='style.css'>
 <title>Formulaire v2</title>
 
-<link rel="stylesheet" href="affichage.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
 
 <h1>list des participants : </h1>
 
 
-    <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
+    <div class="table">
+    <table >
       <thead>
         <tr>
           <th>Nom</th>
@@ -78,8 +78,8 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
       </thead>
     </table>
   </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
+  <div class="table">
+    <table >
       <tbody>
       <?php 
         //affichage des participant
