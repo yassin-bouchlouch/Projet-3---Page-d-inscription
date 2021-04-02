@@ -20,13 +20,12 @@
 
 <div class="container" id="container">
 	<div class="form-container  form-container sign-in-container">
-		<form action="affichage.php" target="_blank" method="get">
+		<form action="affichage.php" target="_blank" method="post">
 		<h1 class="inscription" >Inscription</h1> 
 			<span class=message>Veuillez remplir le formulaire d'inscription</span>
-			<input type="text" placeholder="Prénom" name="prenom"/>
 			<input type="text" placeholder="Nom" name="nom" />
+			<input type="text" placeholder="Prénom" name="prenom"/>
 			<input type="email" placeholder="Email" name="email" />
-			<input type="text" placeholder="Tel" name="numero" />
 			<button class="btn1" >Submit</button>
 		</form>
 	</div>
@@ -36,8 +35,8 @@
 		
 			<div class="overlay-panel overlay-right">
 				<h1>Bonjour</h1>
-				<p>Entrez vos informations personnelles et commencez votre voyage avec nous pour recevoir votre certificat.</p>
-				<button class="ghost" id="signUp">Imprimer</button>
+				<p>Entrez vos informations personnelles et commencez votre voyage avec nous pour recevoir votre certificat, ça ne te prendra qu'une minute.</p>
+				
 			</div>
 		</div>
 	</div>

@@ -1,112 +1,148 @@
-<?
- // Traitement
+<?php
+//initialisation du session
+session_start();
 
- // Initialisation du session
- session_start();
-
- // Initialisation du tableau des participants
- $nom = [];
- $prenom = [];
- $email=[];
- $numero=[];
+//initialisation de tableau des participants
+// $list_participants2=[];
 
  // Trouver ou créer le tableau dans Session
- if( isset( $_SESSION['nom'] ) ) {
-    $nom =  $_SESSION['nom'] ;
- }else {
-    $_SESSION['nom'] =  $nom;
+ //nom
+ if( isset( $_SESSION['liste_nomS'] ) ) {
+    $liste_nom =  $_SESSION['liste_nomS'] ;
+ }elseif(isset($liste_nom)) {
+   $_SESSION['liste_nomS'] =  $liste_nom;
+ }
+//prenom
+if( isset( $_SESSION['liste_prenomS'] ) ) {
+    $liste_prenom =  $_SESSION['liste_prenomS'] ;
+ }elseif(isset($liste_prenom)) {
+   $_SESSION['liste_prenomS'] =  $liste_prenom;
  }
 
- // Ajouter le nom du nom dans le tableau
- $nom[] = $_GET["nom"] ;
-
- // Enregistrer le tableau dans la session
-$_SESSION['nom'] =  $nom;
-
-
-
- // Trouver ou créer le tableau dans Session
- if( isset( $_SESSION['prenom'] ) ) {
-    $prenom =  $_SESSION['prenom'] ;
- }else {
-    $_SESSION['prenom'] =  $prenom;
+   //Email
+if( isset( $_SESSION['liste_emailS'] ) ) {
+    $liste_email =  $_SESSION['liste_emailS'] ;
+ }elseif(isset($liste_email)) {
+   $_SESSION['liste_emailS'] =  $liste_email;
  }
 
- // Ajouter le nom du nom dans le tableau
- $prenom[] = $_GET["prenom"] ;
-
- // Enregistrer le tableau dans la session
-$_SESSION['prenom'] =  $prenom;
+ 
 
 
-// Trouver ou créer le tableau dans Session
-if( isset( $_SESSION['email'] ) ) {
-    $email =  $_SESSION['email'] ;
- }else {
-    $_SESSION['email'] =  $email;
- }
 
- // Ajouter le nom du nom dans le tableau
- $email[] = $_GET["email"] ;
 
- // Enregistrer le tableau dans la session
-$_SESSION['email'] =  $email;
+  // Ajouter le nom et email dans le tableau
+  if (isset($_POST["nom"])||isset($_POST["prenom"])||isset($_POST["email"])||isset($_POST["tele"])) {
+    $liste_nom[] = $_POST["nom"];
+    $liste_prenom[] = $_POST["prenom"];
+    $liste_email[] = $_POST["email"];
+    $liste_email[] = $_POST["tele"];
+   
+     
+  }
 
-// Trouver ou créer le tableau dans Session
-if( isset( $_SESSION['numero'] ) ) {
-    $numero =  $_SESSION['numero'] ;
- }else {
-    $_SESSION['numero'] =  $numero;
- }
-
- // Ajouter le nom du nom dans le tableau
- $numero[] = $_GET["numero"] ;
-
- // Enregistrer le tableau dans la session
-$_SESSION['numero'] =  $numero;
+  
+  // Enregistrer le tableau dans la session
+  if (isset($liste_nom)&&isset($liste_prenom)&&isset($liste_email)&&isset($liste_tele) ){
+    $_SESSION['liste_nomS'] =  $liste_nom;
+    $_SESSION['liste_prenomS'] =  $liste_prenom;
+    $_SESSION['liste_emailS'] =  $liste_email;
+    
+  }
+// session_destroy()
 
 ?>
-
-<!-- Affichage -->
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="affichage.css">
+<meta charset="utf-8" />
+<link rel='stylesheet' type='text/css' href='style.css'>
+<title>Formulaire v2</title>
+
+<link rel="stylesheet" href="affichage.css">
 </head>
 <body>
-<h1>Liste des participants</h1>
+
+<h1>list des participants : </h1>
 
 
-<table class="table" >
-        <thead>
-            <tr>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>Email</th>
-                <th>Tel</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-        //affichage des participant
-        for ($i=0; $i <sizeof($nom); $i++){
-     
-        echo "<tr>";
-        echo "<td>".$nom[$i]."</td>";
-        echo "<td>".$prenom[$i]."</td>";
-        echo "<td>".$email[$i]."</td>";
-        echo "<td>".$numero[$i]."</td>";
-        echo "<tr>";
-        
-        }
-
-    ?>  
-        </tbody>
+    <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          
+        </tr>
+      </thead>
     </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <?php 
+        //affichage des participant
+        if (empty($liste_nom)) {
+          echo "Aucun participant a enregistrer ";
+        }else {
+          $j=0;
+          for ($i=0; $i <sizeof($liste_nom); $i++){     
+          if($j==0){
+            echo "<tr >";
+            echo "<td>".$liste_nom[$i]."</td>";
+            echo "<td>".$liste_prenom[$i]."</td>";
+            echo "<td>".$liste_email[$i]."</td>";
+            
+            
+            echo "<tr>";
+            $j++;
+          }else{
+              echo "<tr>";
+              echo "<td>".$liste_nom[$i]."</td>";
+              echo "<td>".$liste_prenom[$i]."</td>";
+              echo "<td>".$liste_email[$i]."</td>";
+              
+              
+              echo "<tr>";
+              $j=0;
+            }       
+            }
+        }
+    ?> 
+      </tbody>
+    </table>
+  </div>
+
+
+    <div class="btns">
+    <button id="print" type="button" value="Imprimer" onclick="window.print()">Print
+    <a href="index.php"><button href="" type="button" value="Retour">Back</a>
+    
+    <button type="button" value="Fermer" onclick="window.close()">Close
+    </div>
+    
+   <script>
+    //  var background=document.getElementsByTagName("tr").style.backgroundColor;
+    //  if (background=="#dddddd") {
+    //   document.getElementsByTagName("tr").style.background="#eaeaea";
+    //  }else{
+    //   document.getElementsByTagName("tr").style.background="#dddddd";
+    //  }
+    var background=document.getElementsByName()("tr");
+        background.style.backgroundColor="red";
+
+        // '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+
+   </script>
 </body>
+
 </html>
+
+<?php
+    
+ ?>
