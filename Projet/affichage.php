@@ -26,24 +26,19 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
    $_SESSION['liste_emailS'] =  $liste_email;
  }
 
- 
-
-
-
 
   // Ajouter le nom et email dans le tableau
-  if (isset($_POST["nom"])||isset($_POST["prenom"])||isset($_POST["email"])||isset($_POST["tele"])) {
+  if (isset($_POST["nom"])||isset($_POST["prenom"])||isset($_POST["email"])) {
     $liste_nom[] = $_POST["nom"];
     $liste_prenom[] = $_POST["prenom"];
     $liste_email[] = $_POST["email"];
-    $liste_email[] = $_POST["tele"];
-   
+    
      
   }
 
   
   // Enregistrer le tableau dans la session
-  if (isset($liste_nom)&&isset($liste_prenom)&&isset($liste_email)&&isset($liste_tele) ){
+  if (isset($liste_nom)&&isset($liste_prenom)&&isset($liste_email) ){
     $_SESSION['liste_nomS'] =  $liste_nom;
     $_SESSION['liste_prenomS'] =  $liste_prenom;
     $_SESSION['liste_emailS'] =  $liste_email;
@@ -115,20 +110,14 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
   </div>
 
 
-    <div class="btns">
+    
     <button id="print" type="button" value="Imprimer" onclick="window.print()">Print
     <a href="index.php"><button href="" type="button" value="Retour">Back</a>
     
     <button type="button" value="Fermer" onclick="window.close()">Close
-    </div>
-    
-   <script>
-    //  var background=document.getElementsByTagName("tr").style.backgroundColor;
-    //  if (background=="#dddddd") {
-    //   document.getElementsByTagName("tr").style.background="#eaeaea";
-    //  }else{
-    //   document.getElementsByTagName("tr").style.background="#dddddd";
-    //  }
+
+    <script>
+   
     var background=document.getElementsByName()("tr");
         background.style.backgroundColor="red";
 
@@ -139,6 +128,7 @@ $(window).on("load resize ", function() {
 }).resize();
 
    </script>
+   
 </body>
 
 </html>
