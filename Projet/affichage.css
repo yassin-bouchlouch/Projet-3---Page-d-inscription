@@ -13,7 +13,7 @@ table{
   background-color: rgba(255,255,255,0.3);
  }
 .tbl-content{
-  height:300px;
+  height:400px;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
@@ -22,7 +22,8 @@ th{
   padding: 20px 15px;
   text-align: left;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1rem;
+  font-weight: 300;
   color: #fff;
   text-transform: uppercase;
 }
@@ -77,6 +78,7 @@ button {
   background-color: transparent;
   border-color: #FFFFFF;
   margin: 2rem;
+  font-weight: 200;
 }
 
 a {
@@ -84,11 +86,16 @@ a {
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
+  font-weight: 200;
+}
+
+.btns{
+  text-align: center;
 }
 
 @media print{
   button{
       display: none;}
-      h1{color: #000;}
+      th,td{color: #000;}
       
      }

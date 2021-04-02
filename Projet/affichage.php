@@ -51,14 +51,14 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
 <html>
 <head>
 <meta charset="utf-8" />
-<link rel='stylesheet' type='text/css' href='style.css'>
+
 <title>Formulaire v2</title>
 
 <link rel="stylesheet" href="affichage.css">
 </head>
 <body>
 
-<h1>list des participants : </h1>
+
 
 
     <div class="tbl-header">
@@ -110,12 +110,16 @@ if( isset( $_SESSION['liste_emailS'] ) ) {
   </div>
 
 
-    
+    <div class="btns">
+      
     <button id="print" type="button" value="Imprimer" onclick="window.print()">Print
     <a href="index.php"><button href="" type="button" value="Retour">Back</a>
     
     <button type="button" value="Fermer" onclick="window.close()">Close
 
+
+    </div>
+    
     <script>
    
     var background=document.getElementsByName()("tr");
