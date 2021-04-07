@@ -20,7 +20,7 @@
 
 <div class="container" id="container">
 	<div class="form-container  form-container sign-in-container">
-		<form action="affichage.php" target="_blank" method="post">
+		<form action="inscription.php" target="_blank" method="post">
 		<h1 class="inscription" >Inscription</h1> 
 			<span class=message>Veuillez remplir le formulaire d'inscription</span>
 			<input type="text" placeholder="Nom" name="nom" />
