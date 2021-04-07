@@ -16,6 +16,7 @@ $personnes_list[] = json_decode( json_encode($personne));
 $_SESSION['Personne'] =  $personnes_list;
 }
 
+// session_destroy()
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ $_SESSION['Personne'] =  $personnes_list;
 <div class="btns" >
    
    
-    <a  href="liste.php" role="button">Show list</a>  
+    <a  href="liste.php" role="button">Afficher la list</a>  
    
 
 
