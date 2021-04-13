@@ -3,6 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  background: url(https://products.ls.graphics/mesh-gradients/images/21.-Columbia-Blue_1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background: #100a1c;
+  background-image:
+    radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%),
+    radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+  background-attachment: fixed;
+  color: #6cacc5; */
+}
+
+}
 
 h1 {
   color: #426696;
@@ -27,11 +42,6 @@ h3 {
 main {
   font-family: "Poppins", sans-serif;
   height: 100vh;
-  background: url(https://products.ls.graphics/mesh-gradients/images/21.-Columbia-Blue_1.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
