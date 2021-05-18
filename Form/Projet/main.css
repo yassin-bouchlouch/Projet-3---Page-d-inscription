@@ -4,11 +4,8 @@
   box-sizing: border-box;
 }
 html{
-  background: url(https://products.ls.graphics/mesh-gradients/images/21.-Columbia-Blue_1.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: rgb(0,198,255);
+  background: linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(0,114,255,1) 100%);
   /* background: #100a1c;
   background-image:
     radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%),
@@ -20,7 +17,7 @@ html{
 }
 
 h1 {
-  color: #426696;
+  color: #07254d;
   font-weight: 600;
   font-size: 3rem;
   opacity: 0.8;
@@ -28,13 +25,15 @@ h1 {
 }
 h2,
 p {
-  color: #658ec6;
+  color: #07254d;
   font-weight: 500;
   opacity: 0.8;
+  margin: 1rem;
 }
 
 h3 {
-  color: #426696;
+  color: #07254d;
+  font-size: 2rem;
   font-weight: 600;
   opacity: 0.8;
 }
@@ -124,8 +123,8 @@ main {
 .status input {
   background: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.2)
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
   );
   border: none;
   width: 70%;
@@ -140,9 +139,9 @@ input {
   border-radius: 1rem;
   
   padding: 2rem;
-  box-shadow: 2px 2px 5px rgba(122, 122, 122, 0.1);
+  box-shadow: 2px 2px 5px rgba(18, 15, 238, 0.1);
   justify-content: space-between;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
@@ -154,11 +153,15 @@ input {
 }
 ::placeholder{
   opacity: .5;
+  color: #07254d;
   
 }
 
 #sub{
-  background-color:rgba(34, 235, 241, 0.7),;
+  background-color:#00295c;
+  color:#ffff;
+  text-align: center;
+  
 }
 
 @media print {
